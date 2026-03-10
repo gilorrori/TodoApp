@@ -63,5 +63,8 @@ dependencies {
     implementation(libs.hilt.navigation)
     //Icons
     implementation (libs.androidx.compose.material.icons.extended)
+    //Livedata
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.compose.runtime.livedata)
 
 }
