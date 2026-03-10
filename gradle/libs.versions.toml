@@ -15,10 +15,10 @@ ksp = "2.3.4"
 materialIconsExtendedVersion = "1.7.8"
 runtimeLivedata = "1.10.4"
 roomKtx = "2.8.4"
+roomRuntime = "2.4.2"
 
 
 [libraries]
-
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -45,11 +45,12 @@ androidx-compose-runtime-livedata = { module = "androidx.compose.runtime:runtime
 #Room
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
-
+androidx-room-runtime = { module = "androidx.room:room-runtime-ktx", version.ref = "roomRuntime" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
 
 #KSP
 devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
