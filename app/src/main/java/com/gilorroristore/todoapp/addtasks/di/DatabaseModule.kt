@@ -1,8 +1,11 @@
-package com.gilorroristore.todoapp.addtasks.data.di
+package com.gilorroristore.todoapp.addtasks.di
 
 import android.content.Context
 import androidx.room.Room
 import com.gilorroristore.todoapp.addtasks.data.database.TodoDatabase
+import com.gilorroristore.todoapp.addtasks.data.database.dao.TaskDao
+import com.gilorroristore.todoapp.addtasks.data.repositories.TaskRepositoryImpl
+import com.gilorroristore.todoapp.addtasks.domain.repositories.TaskRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,4 +26,10 @@ object DatabaseModule {
    @Provides
    @Singleton
    fun provideDao(db : TodoDatabase) = db.taskDao()
+
+    @Provides
+    @Singleton
+    fun provideTaskRepository(taskDao: TaskDao) : TaskRepository {
+        return TaskRepositoryImpl(taskDao)
+    }
 }
