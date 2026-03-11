@@ -22,4 +22,12 @@ class TaskRepositoryImpl @Inject constructor(private val taskDao: TaskDao) : Tas
     override suspend fun add(taskModel: TaskModel) {
         taskDao.addTask(taskEntity = taskModel.toDatabase())
     }
+
+    override suspend fun update(taskModel: TaskModel) {
+        taskDao.updateTask(taskModel.toDatabase())
+    }
+
+    override suspend fun delete(taskModel: TaskModel) {
+        taskDao.deleteTask(taskModel.toDatabase())
+    }
 }
